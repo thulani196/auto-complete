@@ -6,7 +6,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState<string>('');
   return (
     <div className="main-container">
-      <header className='main-title'><p>Auto-Complete Async</p></header>
+      <header className='main-title'><p>Movie Title Auto-Complete</p></header>
       <AutoComplete searchTerm={searchTerm} onChange={setSearchTerm} />
     </div>
   );
