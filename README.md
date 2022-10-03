@@ -8,5 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 2. Go to the root of the project and run `yarn install` 
 2. Run: `yarn start` to start the project.
 
+- You can find the deployed [Demo of this app here](https://auto-complete-rouge.vercel.app/)
+
 It will run the application in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

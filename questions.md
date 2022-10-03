@@ -1,7 +1,8 @@
 1. What is the difference between Component and PureComponent? give an example where it might break my app.
-    - 
+    - `PureComponent` implements the `shouldComponentUpdate` lifecycle method and does a shallow comparison of new state and props to the previous version. So the component is re-rendered if there are changes to state and props detected. This can greatly improve the performance of the application. But may also break the app. For example if a property is just mutated, so the shallow comparison won’t detect the change and component won’t be re-rendered.
 
 2. Context + ShouldComponentUpdate might be dangerous. Can think of why is that?
+    - Context + ShouldComponentUpdate might be dangerous if a component decides it doesn’t need to re-render (using `shouldComponentUpdate` method), it won’t be re-rendering the child tree of components. So, if there were changes to any child components that were provided not through props drilling, but context. These changes won’t get rendered.
 3. Describe 3 ways to pass information from a component to its PARENT.
     - Use state management libraries such as Redux as they allow us to declare global states that can be updated by any component including child components
     in the component tree.
@@ -86,10 +87,9 @@
     import {useState} from 'react;
     const MyComponent = () => {
         const [name, setName] = useState<string>('Thulani');
-
         return (
             <Fragment>
-                <h3>Hello, {this.state.name}</h3>
+                <h3>Hello, {name}</h3>s
             </Fragment>
         )
     }
