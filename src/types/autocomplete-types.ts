@@ -1,3 +1,5 @@
+import { IMovie } from "./movie-types";
+
 interface AutoCompleteProps {
 	handleAutoComplete: (text: string) => void;
 }
@@ -18,7 +20,7 @@ export interface ResultProps {
 }
 
 export interface ResultListProps extends AutoCompleteProps {
-	results?: ResultProps[];
+	results?: IMovie[];
 	filter?: string;
 	autoCompleted: boolean;
 }
@@ -26,7 +28,7 @@ export interface ResultListProps extends AutoCompleteProps {
 type ErrorType = string | null;
 
 export interface DataProps {
-	data?: ResultProps[];
+	data?: IMovie[];
 	error?: Error | ErrorType;
 	loading: boolean;
 }

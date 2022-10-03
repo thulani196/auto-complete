@@ -8,7 +8,7 @@
     - We can also achieve this by passing down functions that have the ability to update the state being also passed down from the Parent component
     e.g, in the code submission, we are updating the value in the input field by clicking on one of the highlighted search results we get from the API. This is handle by the
     ```handleAutoComplete``` which takes in a ```text: string``` as argument and sends the updated value up to its parent.
-    ```
+    ```jsx
            const handleAutoComplete = (text: string) => {
                 setAutoCompleted(true);
                 setFilter(text);
@@ -28,7 +28,7 @@
     - React Router's `withRouter`
 7. what's the difference in handling exceptions in promises, callbacks and async...await. 
     - In Promises, exceptions are handle via the `catch` function which returns the exception:
-    ```
+    ```js
         const promise1 = new Promise((resolve, reject) => {
             throw 'Uh-oh!';
         });
@@ -38,7 +38,7 @@
         });
     ```
     - In callbacks, exceptions are handled by the anonymous function that either returns data or an exception, like so:
-    ```
+    ```js
         myCallBack(url, (data, error) => {
             if(error) {
                 console.error(error);
@@ -46,7 +46,7 @@
         })
     ```
     - In async-await, errors are best handled by a try catch statement:
-    ```
+    ```js
         try {
             await db.connect();
         } catch(error) {
@@ -57,7 +57,7 @@
     - setState only accepts one argument, which is the value to which you woul like to update a state to. It is async because it may be dealing with an operation that 
     runs over a network, thereby increasing the chances of it running for a long time, and that might affect component rendering.
 9.  List the steps needed to migrate a Class to Function Component
-    ```
+    ```jsx
     /// Lets converte this class component to a functional component
     class MyComponent extends Component {
         state = {
@@ -95,3 +95,18 @@
     }
     export default MyComponent;
     ```
+    This completes our conversion of a class component to a functional component. If we had had component lifecycle methods in the original class Component, we would had to replace those with the useEffect hook respectively as it acts as an alternative to component lifecycle methods. The beauty with useEffect is that you can manipulate when it runs by introducting dependencies to it.
+10. List a few ways styles can be used with components.
+    - Using in-line css:
+    ```jsx
+        <div style={{backgroundColor: 'purple'}}></div>
+    ```
+    - Importing css files into components and using `className` to reference the css objects.
+        ```jsx
+            import '../css/main.css'
+            <div className='main-container'></div>
+        ```
+    - Using external packages such as StyledComponents.
+11. How to render an HTML string coming from the server.
+    ```js ReactDOMServer.renderToString()```
+    You can use this method to generate HTML on the server and send the markup down on the initial request for faster page loads.
