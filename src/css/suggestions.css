@@ -1,0 +1,13 @@
+/* We could name this class better */
+.suggestion {
+    font-size: 1.2em;
+    margin-left: 5%;
+  }
+  
+  .suggestion-status:hover {
+      cursor: pointer;
+  }
+  
+  .suggestion-container {
+    padding-top: 1.4%;
+  }
