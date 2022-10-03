@@ -13,6 +13,7 @@ const AutoCompleteInput = ({ searchTerm, setSearchTerm }: InputProps) => {
 				type='autocomplete'
 				placeholder='Type here and click on the results to autocomplete...'
 				className='autocomplete-input'
+				data-testid='autocomplete-input'
 				value={searchTerm}
 				onChange={(event: ChangeEvent<HTMLInputElement>) =>
 					setSearchTerm(event.target.value)

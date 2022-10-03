@@ -2,8 +2,15 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders home page with title', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const titleElement = screen.getByText(/Movie Title Auto-Complete/i);
+  expect(titleElement).toBeInTheDocument();
 });
+
+test('it renders input field', () => {
+  render(<App />);
+  const inputElement = screen.getByTestId('autocomplete-input');
+  expect(inputElement).toBeInTheDocument();
+  expect(inputElement).toBeVisible();
+})

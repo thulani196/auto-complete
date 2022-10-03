@@ -6,7 +6,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 1. Set [IMDb API](https://rapidapi.com/apidojo/api/imdb8) API key to `REACT_APP_API` variable in the `.env` file.
 2. Go to the root of the project and run `yarn install` 
-2. Run: `yarn start` to start the project.
+3. Run tests: `yarn run test --coverage`
+2. Run App: `yarn start` to start the project.
 
 - You can find the deployed [Demo of this app here](https://auto-complete-rouge.vercel.app/)
 
