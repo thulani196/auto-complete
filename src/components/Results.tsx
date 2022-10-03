@@ -1,4 +1,3 @@
-import React from 'react';
 import { ResultListProps } from '../types/autocomplete-types';
 import HighlightedSuggestion from './HighlightedSuggestion';
 import '../css/suggestions.css';
